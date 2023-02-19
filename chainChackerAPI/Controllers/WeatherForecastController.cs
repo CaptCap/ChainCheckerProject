@@ -21,10 +21,6 @@ public class WeatherForecastController : ControllerBase
     {
         _logger = logger;
     }
-
-   
-
-
     [HttpGet(Name = "GetTransaction")]
     public IEnumerable<ChainSaver> Get()
     {
@@ -35,20 +31,16 @@ public class WeatherForecastController : ControllerBase
         //download webPage
         List<ChainSaver> chaiList = new List<ChainSaver>();
 
-        for (int i = 1; i < 2; i++)
+        for (int i = 1; i < 5; i++)
         {
             HtmlDocument doc = web.Load("https://bscscan.com/txs?p=" + i);
             //pull all of spans which consist 'hash'
-            var HeaderNames = doc.DocumentNode.SelectNodes("//span[contains(@class, 'hash-tag')]");
-            var HeaderTime = doc.DocumentNode.SelectNodes("//td[contains(@class, 'showDate')]");
             var HeaderFrom = doc.DocumentNode.SelectNodes("//tr");
             for (int j = 0; j < HeaderFrom.Count; j++)
             {
 
                 var tr = HeaderFrom[j];
                 HtmlNodeCollection childNodes = tr.ChildNodes;
-
-               
                 ChainSaver showList = new ChainSaver();
                 showList.hash = childNodes[1].InnerText;
                 showList.trasactionType = childNodes[2].InnerText;
@@ -60,17 +52,11 @@ public class WeatherForecastController : ControllerBase
                 showList.to = childNodes[8].InnerText;
                 showList.value = childNodes[9].InnerText;
                 chaiList.Add(showList);
-               
-
             }
-
-
-
-           
-
-
+            Thread.Sleep(1500);
         }
         return (chaiList);
+
 
 
 
