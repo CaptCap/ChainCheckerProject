@@ -16,7 +16,7 @@ namespace chainChackerAPI
     public class AnaliseController : ControllerBase
     {
         [HttpGet(Name = "GetTransactionInfo")]
-        public IEnumerable<ChainSaver> Get()
+        public IEnumerable<ChainSaver> Get(string Hash)
         {
             //import libruary
 
@@ -24,7 +24,7 @@ namespace chainChackerAPI
             HtmlWeb web = new HtmlWeb();
             //download webPage
             List<ChainSaver> chaiList = new List<ChainSaver>();
-            HtmlDocument doc = web.Load("https://bscscan.com/tx/0x2a3259c9e685fd554e50676c227174223cc4d45aa045975d9ab313254caf0242");
+            HtmlDocument doc = web.Load($"https://bscscan.com/tx/{Hash}");
             var walletHash = doc.GetElementbyId("spanFromAdd").InnerText;
             for (int i = 1; i < 5; i++)
             {
