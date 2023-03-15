@@ -15,5 +15,11 @@
   <ItemGroup>
     <None Remove="HtmlAgilityPack" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="Helper\" />
+    <None Remove="Entities\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helper\" />
+    <Folder Include="Entities\" />
   </ItemGroup>
 </Project>

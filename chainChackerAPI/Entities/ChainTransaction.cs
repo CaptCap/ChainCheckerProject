@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Application
 {
-    public class ChainSaver
+    public class ChainTransaction
     {
         public string hash { get; set; }
         public string trasactionType { get; set; }
@@ -12,7 +12,7 @@ namespace Application
 
 
 
-        public ChainSaver()
+        public ChainTransaction()
         {
         }
     }
