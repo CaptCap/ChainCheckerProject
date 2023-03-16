@@ -5,7 +5,7 @@ namespace chainChackerAPI.Entities
 {
     public enum TransactionStatus
     {
-        Normal, Suspicious, Danger
+        None, Normal, Suspicious, Danger, Error
     }
 	public class ChainTransactionWE
 	{
