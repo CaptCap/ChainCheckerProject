@@ -1,0 +1,31 @@
+.suspicious {
+background-color: rgba(84, 36, 204, 0.81);
+
+}
+.danger {
+background-color: rgb(183, 72, 16);
+
+}
+tr {
+    background-color: #232428;
+    height: 50px;
+   
+}
+
+
+td, th {
+    text-align: center;
+    color: white;
+}
+.table-container{
+    min-height: 800px;
+}
+button {
+    color: aliceblue;
+    background-color: #198754;
+    border-radius: 20%;
+
+}
+.normal{
+   
+}

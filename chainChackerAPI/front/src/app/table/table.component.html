@@ -1,0 +1,27 @@
+<div class="table-container">
+    <table class = 'table table-striped' >
+        <thead>
+            <tr>
+            <th>hash</th>
+            <!-- <th>transactionType</th> -->
+            <th>date</th>
+            <th>from</th>
+            <th>to</th>
+            <th>value</th>
+            <th>status</th>
+            </tr>
+        </thead>
+        <tr *ngFor = 'let f of service.transactions' [ngClass]="{'normal': f.status===1,'suspicious': f.status === 2, 'danger' : f.status ===3}">
+            <td class="mx-4">{{f.hash}}</td>
+            <!-- <td>{{f.transactionType}}</td> -->
+            <td>{{f.date}}</td>
+            <td>{{f.from}}</td>
+            <td>{{f.to}}</td>
+            <td>{{f.value}}</td>
+            <!-- <td>{{f.status}}</td> -->
+            <td><button (click)="checkStatus(f.hash)" class="btn btn-primary btn-success">Check</button></td>
+            
+        </tr>
+
+    </table>
+</div>
