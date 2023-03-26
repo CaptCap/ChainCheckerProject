@@ -154,7 +154,7 @@ namespace chainChackerAPI
             }
             var valueAndCurrency = currentTransaction.value.Split(' ');
             double value = double.Parse(valueAndCurrency[0].Replace('.', ','));
-            if (value > 0.01)
+            if (value > 0.1)
             {
                 score += 40;
             }
