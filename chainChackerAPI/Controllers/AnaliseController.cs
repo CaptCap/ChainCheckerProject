@@ -11,7 +11,6 @@ using chainChackerAPI.Entities;
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace chainChackerAPI
-
 {
     [ApiController]
     [Route("[controller]")]
@@ -154,7 +153,7 @@ namespace chainChackerAPI
             }
             var valueAndCurrency = currentTransaction.value.Split(' ');
             double value = double.Parse(valueAndCurrency[0].Replace('.', ','));
-            if (value > 0.1)
+            if (value > 0.03)
             {
                 score += 40;
             }
